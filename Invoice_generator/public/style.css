@@ -1,0 +1,79 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Main Body Styling with Animated Gradient Background */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+}
+
+/* Keyframe animation for the background gradient */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card Styling for a "Frosted Glass" Effect */
+.card {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* This creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem; /* More rounded corners */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Making the card header and form inputs also semi-transparent */
+.card-header {
+    background-color: rgba(0, 123, 255, 0.7) !important;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Watermark Styling */
+.card-body {
+    position: relative;
+}
+
+#watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.06; /* Made it a bit fainter for the new background */
+    z-index: 0;
+    pointer-events: none; /* Allows clicks to go through the watermark */
+    text-align: center;
+}
+
+#watermark img {
+    width: 200px; /* Adjust size as needed */
+    margin-bottom: 10px;
+}
+
+#watermark p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Ensuring the form stays on top of the watermark */
+.invoice-form {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
